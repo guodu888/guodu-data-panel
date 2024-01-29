@@ -1,0 +1,42 @@
+{
+  "name": "guodu-data-panel",
+  "type": "module",
+  "version": "1.0.0",
+  "packageManager": "pnpm@8.6.3",
+  "description": "guodu data panel",
+  "author": "shy1118",
+  "license": "MIT",
+  "keywords": [],
+  "main": "index.js",
+  "files": [
+    "lib/*"
+  ],
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "build": "vite build",
+    "lint": "eslint .",
+    "format": "eslint --fix .",
+    "typecheck": "vue-tsc --noEmit",
+    "release": "bumpp package.json --commit --push --tag && pnpm publish --access public"
+  },
+  "peerDependencies": {
+    "vue": ">= 3.0.0"
+  },
+  "dependencies": {
+    "@vueuse/core": "^10.7.2",
+    "vue": "^3.4.15"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.6.3",
+    "@types/node": "^20.11.10",
+    "@vitejs/plugin-vue": "^5.0.3",
+    "bumpp": "^9.3.0",
+    "eslint": "npm:eslint-ts-patch@^8.56.0-0",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.12",
+    "vite-plugin-dts": "^3.7.2",
+    "vitepress": "1.0.0-rc.40",
+    "vue-tsc": "^1.8.27"
+  }
+}
