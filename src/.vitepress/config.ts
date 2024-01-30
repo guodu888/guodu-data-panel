@@ -2,6 +2,7 @@ import path from 'node:path'
 import type { DefaultTheme } from 'vitepress'
 import { defineConfig } from 'vitepress'
 import Unocss from 'unocss/vite'
+import { MarkdownTransform } from './plugins/markdownTransform'
 
 const guide = [
   {
@@ -71,6 +72,7 @@ export default defineConfig({
       },
     },
     plugins: [
+      MarkdownTransform(),
       Unocss(),
     ],
     ssr: {

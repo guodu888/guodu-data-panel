@@ -1,14 +1,6 @@
-<script setup>
-import demo from './demo.vue'
-</script>
-
 # 边框02
 
-## 示例
-
-<ClientOnly>
-  <demo />
-</ClientOnly>
+<demo />
 
 ## 使用
 
