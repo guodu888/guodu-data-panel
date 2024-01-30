@@ -7,6 +7,7 @@
 -->
 <script setup lang="ts">
 import { NColorPicker, NForm, NFormItem, NInputNumber } from 'naive-ui'
+
 import { ref } from 'vue'
 import { BoxBorder01 } from '~/index'
 

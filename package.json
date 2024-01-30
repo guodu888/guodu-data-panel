@@ -12,9 +12,9 @@
     "lib/*"
   ],
   "scripts": {
-    "dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
-    "preview": "vitepress preview docs",
+    "dev": "vitepress dev src",
+    "docs:build": "vitepress build src",
+    "preview": "vitepress preview src",
     "build": "vite build",
     "lint": "eslint .",
     "format": "eslint --fix .",

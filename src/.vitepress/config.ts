@@ -6,11 +6,11 @@ import Unocss from 'unocss/vite'
 const guide = [
   {
     text: '快速开始',
-    link: '/guide/guide',
+    link: '/guide',
   },
   {
     text: '注意事项',
-    link: '/Guide/Tips',
+    link: '/tips',
   },
 ]
 
@@ -19,8 +19,8 @@ const SideBar: DefaultTheme.SidebarItem[] = [
   {
     text: '边框',
     items: [
-      { text: '边框01', link: '/border/BoxBorder01/' },
-      { text: '边框02', link: '/border/BoxBorder02/' },
+      { text: '边框01', link: '/components/border/BoxBorder01/' },
+      { text: '边框02', link: '/components/border/BoxBorder02/' },
     ],
   },
   // { text: '装饰', items: getDecorationLinkList() },
@@ -55,8 +55,8 @@ export default defineConfig({
       },
     ],
     nav: [
-      { text: '指引', link: '/guide/guide' },
-      { text: '示例', link: '/demo/demo' },
+      { text: '指引', link: '/guide' },
+      { text: '示例', link: '/demo' },
     ],
     sidebar: SideBar,
   },
@@ -73,5 +73,8 @@ export default defineConfig({
     plugins: [
       Unocss(),
     ],
+    ssr: {
+      noExternal: ['naive-ui'],
+    },
   },
 })
