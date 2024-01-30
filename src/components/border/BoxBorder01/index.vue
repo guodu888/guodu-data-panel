@@ -64,12 +64,24 @@ const borders = ['left-top', 'right-top', 'left-bottom', 'right-bottom']
         />
       </polygon>
     </svg>
+    <div class="box-border-inner">
+      <slot />
+    </div>
   </div>
 </template>
 
 <style  scoped>
 .box-border {
   position: relative;
+}
+.box-border-inner {
+  position: absolute;
+  padding: 15px;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
 }
 .border-item {
   position: absolute;

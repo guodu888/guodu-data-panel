@@ -23,7 +23,7 @@ const { width: w, height: h } = useElementSize(boxRef)
 </script>
 
 <template>
-  <div ref="boxRef">
+  <div ref="boxRef" class="box-border">
     <svg :width="w" :height="h">
       <path
         :fill="props.backgroundColor" :stroke="props.colors[0]" :d="`M 5 20 L 5 10 L 12 3  L 60 3 L 68 10 L ${w - 20} 10 L ${w - 5} 25 L ${w - 5} ${h - 5} L 20 ${h - 5} L 5 ${h - 20} L 5 20`"
@@ -35,5 +35,23 @@ const { width: w, height: h } = useElementSize(boxRef)
       <path fill="transparent" :stroke="props.colors[1]" d="M 5 20 L 5 10 L 12 3  L 60 3 L 68 10" />
       <path fill="transparent" :stroke="props.colors[1]" :d="`M ${w - 5} ${h - 30} L ${w - 5} ${h - 5} L ${w - 30} ${h - 5}`" />
     </svg>
+    <div class="box-border-inner">
+      <slot />
+    </div>
   </div>
 </template>
+
+<style  scoped>
+.box-border {
+  position: relative;
+}
+.box-border-inner {
+  position: absolute;
+  padding: 15px;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+</style>
