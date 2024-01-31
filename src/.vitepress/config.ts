@@ -2,6 +2,9 @@ import path from 'node:path'
 import type { DefaultTheme } from 'vitepress'
 import { defineConfig } from 'vitepress'
 import Unocss from 'unocss/vite'
+import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
+import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
 import { MarkdownTransform } from './plugins/markdownTransform'
 
 const guide = [
@@ -24,7 +27,13 @@ const SideBar: DefaultTheme.SidebarItem[] = [
       { text: '边框02', link: '/components/border/BoxBorder02/' },
     ],
   },
-  // { text: '装饰', items: getDecorationLinkList() },
+  {
+    text: '装饰',
+    items: [
+      { text: '装饰01', link: '/components/decoration/Decoration01/' },
+      { text: '装饰02', link: '/components/decoration/Decoration02/' },
+    ],
+  },
   // { text: '其他', items: getOtherLinkList() },
 ]
 
@@ -74,6 +83,19 @@ export default defineConfig({
     plugins: [
       MarkdownTransform(),
       Unocss(),
+      AutoImport({
+        imports: [
+          'vue',
+          '@vueuse/core',
+        ],
+        dts: true,
+        vueTemplate: true,
+      }),
+      Components({
+        dts: true,
+        dirs: ['./.vitepress/components'],
+        resolvers: [NaiveUiResolver()],
+      }),
     ],
     ssr: {
       noExternal: ['naive-ui'],

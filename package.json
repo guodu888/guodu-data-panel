@@ -6,6 +6,14 @@
   "description": "guodu data panel",
   "author": "shy1118",
   "license": "MIT",
+  "homepage": "https://github.com/shy1118999/guodu-data-panel#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shy1118999/guodu-data-panel.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shy1118999/guodu-data-panel/issues"
+  },
   "keywords": [],
   "main": "index.js",
   "files": [
@@ -37,6 +45,8 @@
     "naive-ui": "^2.37.3",
     "typescript": "^5.3.3",
     "unocss": "^0.58.4",
+    "unplugin-auto-import": "^0.17.5",
+    "unplugin-vue-components": "^0.26.0",
     "vite": "^5.0.12",
     "vite-plugin-dts": "^3.7.2",
     "vitepress": "1.0.0-rc.40",

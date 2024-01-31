@@ -5,6 +5,7 @@ import type { UserConfig } from 'vite'
 import { defineConfig, loadEnv } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import Dts from 'vite-plugin-dts'
+import AutoImport from 'unplugin-auto-import/vite'
 
 const libDir = path.resolve(__dirname, 'lib')
 const srcDir = path.resolve(__dirname, 'src')
@@ -15,6 +16,15 @@ export default defineConfig(async ({ mode }): Promise<UserConfig> => {
 
     plugins: [
       Vue({}),
+      // https://github.com/antfu/unplugin-auto-import
+      AutoImport({
+        imports: [
+          'vue',
+          '@vueuse/core',
+        ],
+        dts: true,
+        vueTemplate: true,
+      }),
       Dts({
         include: ['src'],
         insertTypesEntry: true,
