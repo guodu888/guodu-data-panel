@@ -34,6 +34,7 @@ const SideBar: DefaultTheme.SidebarItem[] = [
       { text: '边框08', link: '/components/border/BoxBorder08/' },
       { text: '边框09', link: '/components/border/BoxBorder09/' },
       { text: '边框10', link: '/components/border/BoxBorder10/' },
+      { text: '边框11', link: '/components/border/BoxBorder11/' },
     ],
   },
   {

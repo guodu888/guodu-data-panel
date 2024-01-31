@@ -11,9 +11,11 @@ declare module 'vue' {
     DocDemoBox: typeof import('./.vitepress/components/DocDemoBox.vue')['default']
     DocForm: typeof import('./.vitepress/components/DocForm.vue')['default']
     DocFormItem: typeof import('./.vitepress/components/DocFormItem.vue')['default']
+    DocInput: typeof import('./.vitepress/components/DocInput.vue')['default']
     DocInputNumber: typeof import('./.vitepress/components/DocInputNumber.vue')['default']
     DocSwitch: typeof import('./.vitepress/components/DocSwitch.vue')['default']
     NColorPicker: typeof import('naive-ui')['NColorPicker']
+    NInput: typeof import('naive-ui')['NInput']
     NInputNumber: typeof import('naive-ui')['NInputNumber']
     NSwitch: typeof import('naive-ui')['NSwitch']
   }
