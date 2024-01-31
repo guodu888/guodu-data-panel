@@ -17,22 +17,15 @@ const props = withDefaults(defineProps<{
 })
 const boxRef = ref<HTMLElement>()
 const { width, height } = useElementSize(boxRef)
-</script>"
+</script>
 
 <template>
   <div ref="boxRef" class="border-box-4">
     <svg :class="`border-svg-container ${reverse && 'reverse'}`" :width="width" :height="height">
       <polygon :fill="props.backgroundColor" :points="`${width - 15}, 22 170, 22 150, 7 40, 7 28, 21 32, 24 16, 42 16, ${height - 32} 41, ${height - 7} ${width - 15}, ${height - 7}`" />
 
-      <polyline
-        class="bb4-line-1"
-        :stroke="props.colors[0]"
-        :points="`145, ${height - 5} 40, ${height - 5} 10, ${height - 35} 10, 40 40, 5 150, 5 170, 20 ${width - 15}, 20`"
-      />
-      <polyline
-        :stroke="props.colors[1]"
-        class="bb4-line-2" :points="`245, ${height - 1} 36, ${height - 1} 14, ${height - 23} 14, ${height - 100}`"
-      />
+      <polyline class="bb4-line-1" :stroke="props.colors[0]" :points="`145, ${height - 5} 40, ${height - 5} 10, ${height - 35} 10, 40 40, 5 150, 5 170, 20 ${width - 15}, 20`" />
+      <polyline :stroke="props.colors[1]" class="bb4-line-2" :points="`245, ${height - 1} 36, ${height - 1} 14, ${height - 23} 14, ${height - 100}`" />
 
       <polyline class="bb4-line-3" :stroke="props.colors[0]" :points="`7, ${height - 40} 7, ${height - 75}`" />
       <polyline class="bb4-line-4" :stroke="props.colors[0]" points="28, 24 13, 41 13, 64" />
