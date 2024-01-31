@@ -1,27 +1,26 @@
 <!--
  * @Author: shaohang-shy
- * @Date: 2024-01-30 17:40:30
+ * @Date: 2024-01-31 18:35:39
  * @LastEditors: shaohang-shy
- * @LastEditTime: 2024-01-30 17:40:30
- * @Description: Decoration01
+ * @LastEditTime: 2024-01-31 18:35:39
+ * @Description: Decoration03
 -->
 <script setup lang="ts">
-import Decoration01 from './index.vue'
+import Decoration03 from './index.vue'
 
 // 获取当前文件path
 
 const form = ref({
-  color1: '#fff',
-  color2: '#0de7c2',
-  size: 2.5,
-  row: 4,
-  column: 20,
-  width: 200,
+  colors: ['#7acaec', 'transparent'] as [string, string],
+  size: 7,
+  row: 2,
+  column: 25,
+  width: 300,
   height: 50,
 })
 
 const source = computed(() => `
-<Decoration01 :size="${form.value.size}" :row="${form.value.row}" :column="${form.value.column}" :colors="['${form.value.color1}', '${form.value.color2}']" class="mx-auto" :style="{ width: '${form.value.width}px', height: '${form.value.height}px' }" />`)
+<Decoration03 :size="${form.value.size}" :row="${form.value.row}" :column="${form.value.column}" :colors="[${form.value.colors.map(x => `'${x}'`).join(' ,')}]" class="mx-auto" :style="{ width: '${form.value.width}px', height: '${form.value.height}px' }" />`)
 const { copy, copied } = useClipboard({ source })
 
 function handleCopy() {
@@ -32,15 +31,15 @@ function handleCopy() {
 <template>
   <div class="p-3">
     <DocDemoBox :copied="copied" @copy="handleCopy">
-      <Decoration01 :size="form.size" :row="form.row" :column="form.column" :colors="[form.color1, form.color2]" class="mx-auto" :style="{ width: `${form.width}px`, height: `${form.height}px` }" />
+      <Decoration03 :size="form.size" :row="form.row" :column="form.column" :colors="form.colors" class="mx-auto" :style="{ width: `${form.width}px`, height: `${form.height}px` }" />
     </DocDemoBox>
     <div class="mt-3">
       <DocForm>
-        <DocFormItem label="color[0]">
-          <DocColorPicker v-model:value="form.color1" />
+        <DocFormItem label="colors[0]">
+          <DocColorPicker v-model:value="form.colors[0]" />
         </DocFormItem>
-        <DocFormItem label="color[1]">
-          <DocColorPicker v-model:value="form.color2" />
+        <DocFormItem label="colors[1]">
+          <DocColorPicker v-model:value="form.colors[1]" />
         </DocFormItem>
         <DocFormItem label="size" description="单个的大小">
           <NInputNumber v-model:value="form.size" />
