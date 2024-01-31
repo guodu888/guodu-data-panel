@@ -92,7 +92,7 @@ const filterId = `border-box-11-filterId-${id}`
 
       <polygon
         :stroke="props.colors[0]"
-        :fill="fade(props.colors[1] || props.colors[1], 30)"
+        :fill="fade(props.colors[1], 30)"
         :filter="`url(#${filterId})`"
         :points="`
           ${(width + titleWidth) / 2 - 11}, 37 ${(width + titleWidth) / 2 - 32}, 11
