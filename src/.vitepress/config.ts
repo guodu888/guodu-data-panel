@@ -20,6 +20,7 @@ const guide = [
 
 const SideBar: DefaultTheme.SidebarItem[] = [
   { text: '介绍', items: guide },
+  { text: '全屏容器', link: '/components/common/FullScreenContainer/' },
   {
     text: '边框',
     items: [
