@@ -26,6 +26,7 @@ const SideBar: DefaultTheme.SidebarItem[] = [
     items: [
       { text: '边框01', link: '/components/border/BoxBorder01/' },
       { text: '边框02', link: '/components/border/BoxBorder02/' },
+      { text: '边框03', link: '/components/border/BoxBorder03/' },
     ],
   },
   {

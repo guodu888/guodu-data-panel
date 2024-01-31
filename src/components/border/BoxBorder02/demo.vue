@@ -7,7 +7,6 @@
 -->
 
 <script setup lang="ts">
-import { ref } from 'vue'
 import BoxBorder02 from './index.vue'
 
 const form = ref({
