@@ -30,7 +30,7 @@ const SideBar: DefaultTheme.SidebarItem[] = [
       { text: '边框04', link: '/components/border/BoxBorder04/' },
       { text: '边框05', link: '/components/border/BoxBorder05/' },
       { text: '边框06', link: '/components/border/BoxBorder06/' },
-      // { text: '边框07', link: '/components/border/BoxBorder07/' },
+      { text: '边框07', link: '/components/border/BoxBorder07/' },
       // { text: '边框08', link: '/components/border/BoxBorder08/' },
     ],
   },
