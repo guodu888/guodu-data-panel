@@ -39,3 +39,11 @@ export function pointsToString(points: Array<Point>) {
 function pointToString(point: Point) {
   return `${point.x},${point.y}`
 }
+
+export function randomExtend(minNum: number, maxNum: number) {
+  if (arguments.length === 1)
+    return Number.parseInt((Math.random() * minNum + 1).toString(), 10)
+
+  else
+    return Number.parseInt((Math.random() * (maxNum - minNum + 1) + minNum).toString(), 10)
+}
