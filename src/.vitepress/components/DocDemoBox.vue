@@ -8,8 +8,10 @@
 <script setup lang="ts">
 const props = withDefaults(defineProps<{
   copied?: boolean
+  showCopy?: boolean
 }>(), {
   copied: false,
+  showCopy: true,
 })
 const emits = defineEmits(['copy'])
 </script>
@@ -17,7 +19,7 @@ const emits = defineEmits(['copy'])
 <template>
   <div class="demo-box w-full bg-dark p-3 rounded relative">
     <slot />
-    <button title="Copy Code" class="copy" :class="{ copied: props.copied }" @click="emits('copy')" />
+    <button v-if="props.showCopy" title="Copy Code" class="copy" :class="{ copied: props.copied }" @click="emits('copy')" />
   </div>
 </template>
 
