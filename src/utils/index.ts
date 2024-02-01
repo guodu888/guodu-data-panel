@@ -47,3 +47,16 @@ export function randomExtend(minNum: number, maxNum: number) {
   else
     return Number.parseInt((Math.random() * (maxNum - minNum + 1) + minNum).toString(), 10)
 }
+
+/**
+ * @description Get the coordinates of the specified radian on the circle
+ * @param {number} x      Circle x coordinate
+ * @param {number} y      Circle y coordinate
+ * @param {number} radius Circle radius
+ * @param {number} radian Specfied radian
+ * @return {Array} Postion of point
+ */
+
+export function getCircleRadianPoint(x: number, y: number, radius: number, radian: number) {
+  return [x + Math.cos(radian) * radius, y + Math.sin(radian) * radius]
+}

@@ -53,6 +53,7 @@ const SideBar: DefaultTheme.SidebarItem[] = [
       { text: '装饰09', link: '/components/decoration/Decoration09/' },
       { text: '装饰10', link: '/components/decoration/Decoration10/' },
       { text: '装饰11', link: '/components/decoration/Decoration11/' },
+      { text: '装饰12', link: '/components/decoration/Decoration12/' },
     ],
   },
   // { text: '其他', items: getOtherLinkList() },
