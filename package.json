@@ -30,10 +30,12 @@
     "release": "bumpp package.json --commit --push --tag && pnpm publish --access public"
   },
   "peerDependencies": {
+    "echarts": ">= 5.0.0",
     "vue": ">= 3.0.0"
   },
   "dependencies": {
     "@vueuse/core": "^10.7.2",
+    "echarts": "^5.4.3",
     "vue": "^3.4.15"
   },
   "devDependencies": {
