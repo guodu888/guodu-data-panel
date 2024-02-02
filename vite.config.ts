@@ -42,7 +42,7 @@ export default defineConfig(async ({ mode }): Promise<UserConfig> => {
       // https://rollupjs.org/guide/en/#big-list-of-options
       rollupOptions: {
         // 确保外部化处理那些你不想打包进库的依赖
-        external: ['vue', 'echarts'],
+        external: ['vue', 'echarts', 'echarts/core'],
         output: {
           exports: 'named',
           // https://github.com/henriquehbr/svelte-typewriter/issues/21#issuecomment-968835822

@@ -2,8 +2,9 @@ import FullScreenContainer from './components/common/FullScreenContainer/index.v
 import BorderButton from './components/button/BorderButton/index.vue'
 import ScrollTable from './components/scroll/ScrollTable/index.vue'
 import ScrollRank from './components/scroll/ScrollRank/index.vue'
+import { useEcharts } from './composables/useEcharts'
 
 export * from './components/border'
 export * from './components/decoration'
 
-export { FullScreenContainer, BorderButton, ScrollTable, ScrollRank }
+export { FullScreenContainer, BorderButton, ScrollTable, ScrollRank, useEcharts }
