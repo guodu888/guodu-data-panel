@@ -1,7 +1,7 @@
 {
   "name": "guodu-data-panel",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "packageManager": "pnpm@8.6.3",
   "description": "guodu data panel",
   "author": "shy1118",
@@ -15,7 +15,9 @@
     "url": "https://github.com/shy1118999/guodu-data-panel/issues"
   },
   "keywords": [],
-  "main": "index.js",
+  "main": "./lib/guodu-data-panel.umd.cjs",
+  "module": "./lib/guodu-data-panel.js",
+  "types": "./lib/index.d.ts",
   "files": [
     "lib/*"
   ],
