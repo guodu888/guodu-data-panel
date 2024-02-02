@@ -9,9 +9,11 @@
 const props = withDefaults(defineProps<{
   width: number
   height: number
-  background: string
+  background?: string
+  backgroundColor?: string
 }>(), {
   background: '#030303',
+  backgroundColor: '#030303',
 })
 // 获取浏览器宽高
 const boxRef = ref<HTMLElement | null>(null)
@@ -28,8 +30,8 @@ const scale = computed(() => {
 </script>
 
 <template>
-  <div ref="boxRef" class="full-screen-container" :style="{ background: props.background }">
-    <div :style="{ transform: `scale(${scale})`, position: 'absolute' }">
+  <div ref="boxRef" class="full-screen-container" :style="{ backgroundColor: props.backgroundColor }">
+    <div :style="{ transform: `scale(${scale})`, position: 'absolute', background: props.background }">
       <div class="full-screen-container-inner" :style="{ width: `${props.width}px`, height: `${props.height}px` }">
         <slot />
       </div>
