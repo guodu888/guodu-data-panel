@@ -1,0 +1,7 @@
+[build]
+publish = "src/.vitepress/dist"
+command = "npx pnpm i --no-frozen-lockfile && npx pnpm run docs:build"
+
+[build.environment]
+NPM_FLAGS = "--prefix=/dev/null"
+NODE_VERSION = "18"
