@@ -7,7 +7,7 @@
 -->
 <script setup lang="ts">
 import BaseWave from '../../common/BaseWave/index.vue'
-import { lighten } from '~/utils/color'
+import { lighten } from '../../../utils/color'
 
 defineOptions({
   components: {

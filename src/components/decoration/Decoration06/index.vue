@@ -6,7 +6,7 @@
  * @Description: Decoration06
 -->
 <script setup lang="ts">
-import { randomExtend } from '~/utils'
+import { randomExtend } from '../../../utils'
 
 const props = withDefaults(defineProps<{
   colors?: [string, string]

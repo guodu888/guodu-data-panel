@@ -24,6 +24,7 @@ const SideBar: DefaultTheme.SidebarItem[] = [
   { text: 'useEcharts', link: '/composables/useEcharts/' },
   { text: 'Loading', link: '/components/common/Loading/' },
   { text: 'ScrollTable', link: '/components/scroll/ScrollTable/' },
+  { text: 'ScrollRank', link: '/components/scroll/ScrollRank/' },
   {
     text: '边框',
     items: [
