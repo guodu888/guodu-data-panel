@@ -23,6 +23,7 @@ const SideBar: DefaultTheme.SidebarItem[] = [
   { text: '全屏容器', link: '/components/common/FullScreenContainer/' },
   { text: 'useEcharts', link: '/composables/useEcharts/' },
   { text: 'Loading', link: '/components/common/Loading/' },
+  { text: 'ScrollTable', link: '/components/scroll/ScrollTable/' },
   {
     text: '边框',
     items: [
