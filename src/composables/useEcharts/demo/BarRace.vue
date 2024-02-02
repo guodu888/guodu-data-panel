@@ -79,7 +79,14 @@ const startYear = ref(0)
 const showYear = ref('')
 let allData: any[] = []
 const data = ref<any[]>([])
-const flags = ref<{	code: string, emoji: string, unicode: string, name: string, title: string, dialCode: string }[]>([])
+const flags = ref<{
+  code: string
+  emoji: string
+  unicode: string
+  name: string
+  title: string
+  dialCode: string
+}[]>([])
 function getFlag(countryName: string) {
   if (!countryName)
     return ''
