@@ -38,6 +38,7 @@
   "dependencies": {
     "@vueuse/core": "^10.7.2",
     "echarts": "^5.4.3",
+    "echarts-wordcloud": "^2.1.0",
     "swiper": "^11.0.5",
     "vue": "^3.4.15"
   },

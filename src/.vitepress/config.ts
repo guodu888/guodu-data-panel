@@ -26,6 +26,12 @@ const SideBar: DefaultTheme.SidebarItem[] = [
   { text: 'ScrollTable', link: '/components/scroll/ScrollTable/' },
   { text: 'ScrollRank', link: '/components/scroll/ScrollRank/' },
   {
+    text: '常用图表',
+    items: [
+      { text: '词云图', link: '/components/chart/WordCloudChart/' },
+    ],
+  },
+  {
     text: '边框',
     items: [
       { text: '边框01', link: '/components/border/BoxBorder01/' },
