@@ -29,6 +29,7 @@ const SideBar: DefaultTheme.SidebarItem[] = [
     text: '常用图表',
     items: [
       { text: '词云图', link: '/components/chart/WordCloudChart/' },
+      { text: '进度池', link: '/components/chart/ProgressPool/' },
     ],
   },
   {
