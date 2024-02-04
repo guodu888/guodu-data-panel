@@ -30,6 +30,7 @@ const SideBar: DefaultTheme.SidebarItem[] = [
     items: [
       { text: '词云图', link: '/components/chart/WordCloudChart/' },
       { text: '进度池', link: '/components/chart/ProgressPool/' },
+      { text: '地图', link: '/components/chart/GeoMap/' },
     ],
   },
   {

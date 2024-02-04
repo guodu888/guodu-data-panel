@@ -12,6 +12,7 @@ export function useEcharts(
   options: Ref<EChartsOption> | ComputedRef<EChartsOption>,
   renderFun?: (chartInstance: echarts.ECharts) => void,
   lazyUpdate = true,
+  theme = 'dark',
 ) {
   const domRef = ref<HTMLElement | null>(null)
 
@@ -36,7 +37,7 @@ export function useEcharts(
   async function render() {
     if (domRef.value) {
       await nextTick()
-      chart = echarts.init(domRef.value)
+      chart = echarts.init(domRef.value, theme)
       if (renderFun)
         renderFun(chart)
 
