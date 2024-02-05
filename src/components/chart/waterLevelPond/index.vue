@@ -76,6 +76,7 @@ const path = computed(() => {
         :ry="height / 2 - props.borderWidth / 2"
         :stroke="`url(#${gradientId})`"
         :stroke-width="props.borderWidth"
+        fill="none"
       />
 
       <rect
@@ -87,6 +88,7 @@ const path = computed(() => {
         :height="height - props.borderWidth"
         :stroke="`url(#${gradientId})`"
         :stroke-width="props.borderWidth"
+        fill="none"
       />
 
     </svg>

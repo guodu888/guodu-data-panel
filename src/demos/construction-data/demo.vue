@@ -15,6 +15,8 @@ const MyChart = defineClientComponent(() => {
 
 <template>
   <ClientOnly>
-    <MyChart />
+    <Teleport to="body">
+      <MyChart />
+    </Teleport>
   </ClientOnly>
 </template>

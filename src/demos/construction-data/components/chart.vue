@@ -19,7 +19,8 @@ import {
 
 import { LabelLayout, UniversalTransition } from 'echarts/features'
 import { CanvasRenderer } from 'echarts/renderers'
-import { Decoration05, Decoration08, Decoration10, FullScreenContainer, ScrollRank, useEcharts } from '../../../index'
+import { Decoration05, Decoration08, Decoration10, FullScreenContainer, ScrollRank, ScrollTable, WaterLevelPond, useEcharts } from '../../../index'
+import DataPanel from './dataPanel.vue'
 
 echarts.use([
   TitleComponent,
@@ -245,6 +246,35 @@ const roseOptions = computed(() => ({
   color: ['#da2f00', '#fa3600', '#ff4411', '#ff724c', '#541200', '#801b00', '#a02200', '#5d1400', '#b72700'],
 } as EChartsOption))
 const { domRef: roseChartRef } = useEcharts(roseOptions)
+
+const tableData = [
+  ['2019-07-01 19:25:00', '路面危害-松散', '5', 'xxxxxxx'],
+  ['2019-07-02 17:25:00', '路面危害-路面油污清理', '13', 'xxxxxxx'],
+  ['2019-07-03 16:25:00', '交安设施-交通标志牌结构', '6', 'xxxxxxx'],
+  ['2019-07-04 15:25:00', '路基危害-防尘网', '2', 'xxxxxxx'],
+  ['2019-07-05 14:25:00', '交安设施-交通标志牌结构', '1', 'xxxxxxx'],
+  ['2019-07-06 13:25:00', '路面危害-松散', '3', 'xxxxxxx'],
+  ['2019-07-07 12:25:00', '路基危害-防尘网', '4', 'xxxxxxx'],
+  ['2019-07-08 11:25:00', '路面危害-路面油污清理', '2', 'xxxxxxx'],
+  ['2019-07-09 10:25:00', '交安设施-交通标志牌结构', '5', 'xxxxxxx'],
+  ['2019-07-10 09:25:00', '路基危害-防尘网', '3', 'xxxxxxx'],
+].map((x, i) => ({
+  id: i + 1,
+  time: x[0],
+  type: x[1],
+  number: x[2],
+  desc: x[3],
+}))
+//  header: ['时间', '病害信息', '数量', '标段'],
+const tableColumns = [
+  { span: 1, key: 'index', title: '#', render(_: any, i: number) {
+    return h('div', { class: 'scroll-table-row-item-index' }, i + 1)
+  } },
+  { span: 2, key: 'time', title: '时间' },
+  { span: 2, key: 'type', title: '病害信息' },
+  { span: 1, key: 'number', title: '数量' },
+  { span: 1, key: 'desc', title: '标段' },
+]
 </script>
 
 <template>
@@ -274,20 +304,49 @@ const { domRef: roseChartRef } = useEcharts(roseOptions)
           <Decoration10 class="absolute w-full h-5px bottom-0" />
         </div>
         <!-- h:825px -->
-        <div class="w-full h-825px flex">
-          <div class="h-full w-384px flex flex-col px-10px">
+        <div class="w-full h-800px flex mt-25px gap-20px">
+          <div class="h-full w-430px flex flex-col px-10px b-t-5px b-t-solid b-t-#0199d180 bg-#061e5d80">
             <div class="text-30px leading-60px h-60px">
               巡查上报记录数量
             </div>
-            <div class="h-760px w-full">
+            <div class="h-735px w-full">
               <ScrollRank unit="" :data="(rankData.sort((a, b) => b.value - a.value).map((x, i) => ({ ...x, ranking: i + 1 })) as any)" :slides-per-view="8" />
             </div>
           </div>
-          <div class="w-full">
-            <div class="h-410px flex">
-              <div class="h-full w-410px">
+          <div class="w-full flex flex-col gap-20px">
+            <div class="h-400px flex gap-20px">
+              <div class="h-full w-410px b-t-5px b-t-solid b-t-#0199d180 bg-#061e5d80">
                 <div ref="roseChartRef" class="w-full h-full" />
               </div>
+              <div class="h-full w-410px b-t-5px b-t-solid b-t-#0199d180 bg-#061e5d80">
+                <p class="text-30px leading-60px h-60px text-center">
+                  计划资金累计完成情况
+                </p>
+                <p class="text-26px leading-60px h-60px text-center">
+                  累计完成<span class="text-#58a1ff text-42px mx-5px font-bold">235,680</span>元
+                </p>
+                <div class="mx-auto w-240px h-240px mt-20px relative">
+                  <WaterLevelPond class="w-full h-full" shape="round" :percentage="45" :wave-colors="['#00BAFF55']" />
+                  <div class="absolute w-full h-full top-0 left-0 flex justify-center items-center text-#00BAFF text-42px font-bold">
+                    45%
+                  </div>
+                </div>
+              </div>
+              <div class="h-full w-410px flex-1">
+                <ScrollTable class="h-full" :data="tableData" :columns="tableColumns" :row-height="400 / 6" />
+              </div>
+            </div>
+            <div class="w-full flex-1 flex gap-20px">
+              <template v-for="item in 5" :key="item">
+                <DataPanel
+                  class="flex-1 h-full"
+                  :title="`资金占比${item}`"
+                  :no="`0${item}`"
+                  :percentage="randomExtend(20, 100)"
+                  :amount="randomExtend(100, 1000)"
+                  :count="randomExtend(0, 100)"
+                />
+              </template>
             </div>
           </div>
         </div>
@@ -296,8 +355,37 @@ const { domRef: roseChartRef } = useEcharts(roseOptions)
   </div>
 </template>
 
-<style>
+<style scoped>
 .menu-item + .menu-item {
     border-left: 3px solid #061e5d;
+}
+:deep(.scroll-table-header) {
+  background-color: #1981f6;
+  color: white;
+  font-size: 16px;
+}
+:deep(.scroll-table-header-item),
+:deep(.scroll-table-row-item) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+}
+/* 奇数的一个颜色 */
+:deep(.scroll-table-row):nth-child(odd) {
+  background-color: #003B51;
+  color: white;
+}
+/* 偶数的一个颜色 */
+:deep(.scroll-table-row):nth-child(even) {
+  background-color: #0A2732;
+  color: white;
+}
+
+:deep(.scroll-table-row-item-index) {
+  color: white;
+  background-color: rgb(0, 186, 255);
+  border-radius: 4px;
+  padding: 0 5px;
 }
 </style>
