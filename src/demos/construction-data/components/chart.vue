@@ -172,184 +172,78 @@ const data = [
 
 const rankData = [
   {
-    key: 1,
-    title: '周口',
+    name: '日常养护',
     value: 55,
-    ranking: 1,
   },
   {
-    key: 2,
-    title: '南阳',
+    name: '交通事故',
     value: 120,
-    ranking: 2,
   },
   {
-    key: 3,
-    title: '西峡',
+    name: '路面',
     value: 78,
-    ranking: 3,
   },
   {
-    key: 4,
-    title: '驻马店',
+    name: '桥通',
     value: 66,
-    ranking: 4,
   },
   {
-    key: 5,
-    title: '新乡',
+    name: '计日工',
     value: 80,
-    ranking: 5,
   },
   {
-    key: 6,
-    title: '信阳',
+    name: '路基',
     value: 45,
-    ranking: 6,
   },
   {
-    key: 7,
-    title: '漯河',
+    name: '交安设施',
     value: 29,
-    ranking: 7,
   },
   {
-    key: 8,
-    title: '平顶山',
+    name: '除雪',
     value: 29,
-    ranking: 8,
   },
   {
-    key: 9,
-    title: '商丘',
+    name: '绿化',
     value: 29,
-    ranking: 9,
   },
-  {
-    key: 10,
-    title: '郑州',
-    value: 29,
-    ranking: 10,
-  },
-  {
-    key: 11,
-    title: '洛阳',
-    value: 29,
-    ranking: 11,
-  },
-  {
-    key: 12,
-    title: '开封',
-    value: 29,
-    ranking: 12,
-  },
-  {
-    key: 13,
-    title: '安阳',
-    value: 29,
-    ranking: 13,
-  },
-  {
-    key: 14,
-    title: '焦作',
-    value: 29,
-    ranking: 14,
-  },
-  {
-    key: 15,
-    title: '濮阳',
-    value: 29,
-    ranking: 15,
-  },
-  {
-    key: 16,
-    title: '许昌',
-    value: 29,
-    ranking: 16,
-  },
-  {
-    key: 17,
-    title: '漯河',
-    value: 29,
-    ranking: 17,
-  },
-  {
-    key: 18,
-    title: '三门峡',
-    value: 29,
-    ranking: 18,
-  },
-  {
-    key: 19,
-    title: '济源',
-    value: 29,
-    ranking: 19,
-  },
-  {
-    key: 20,
-    title: '鹤壁',
-    value: 29,
-    ranking: 20,
-  },
-  {
-    key: 21,
-    title: '濮阳',
-    value: 29,
-    ranking: 21,
-  },
-  {
-    key: 22,
-    title: '许昌',
-    value: 29,
-    ranking: 22,
-  },
-  {
-    key: 23,
-    title: '漯河',
-    value: 29,
-    ranking: 23,
-  },
-]
+].map((x, i) => ({ ...x, title: x.name, ranking: i + 1 }))
 
-const roseOptions = computed<EChartsOption>(() => ({
-  legend: {
-    show: false,
-    top: 'bottom',
-    textStyle: {
-      color: '#fff',
-      fontSize: 16,
-    },
-  },
-  grid: {
-    containLabel: true,
-  },
+const roseOptions = computed(() => ({
   series: [
     {
-      name: 'Nightingale Chart',
       type: 'pie',
-      roseType: 'area',
-      radius: '40%', // 圆的大小
-      center: ['50%', '50%'], // 居中
-      label: {
-        fontSize: 20,
-
-      },
-      itemStyle: {
-        borderRadius: 8,
-      },
+      radius: '50%',
+      roseSort: false,
       data: [
-        { value: 40, name: 'rose 1' },
-        { value: 38, name: 'rose 2' },
-        { value: 32, name: 'rose 3' },
-        { value: 30, name: 'rose 4' },
-        { value: 28, name: 'rose 5' },
-        { value: 26, name: 'rose 6' },
-        { value: 22, name: 'rose 7' },
-        { value: 18, name: 'rose 8' },
+        { name: '路基', value: randomExtend(40, 70) },
+        { name: '交安设施', value: randomExtend(20, 30) },
+        { name: '日常养护', value: randomExtend(10, 50) },
+        { name: '桥通', value: randomExtend(5, 20) },
+        { name: '交通事故', value: randomExtend(40, 50) },
+        { name: '路面', value: randomExtend(20, 30) },
+        { name: '绿化', value: randomExtend(5, 10) },
+        { name: '计日工', value: randomExtend(20, 35) },
+        { name: '除雪', value: randomExtend(5, 10) },
       ],
+      insideLabel: {
+        show: false,
+      },
+      outsideLabel: {
+        formatter: '{name} {percent}%',
+        labelLineEndLength: 20,
+        style: {
+          fill: '#fff',
+        },
+        labelLineStyle: {
+          stroke: '#fff',
+        },
+      },
+      roseType: true,
     },
   ],
-}))
+  color: ['#da2f00', '#fa3600', '#ff4411', '#ff724c', '#541200', '#801b00', '#a02200', '#5d1400', '#b72700'],
+} as EChartsOption))
 const { domRef: roseChartRef } = useEcharts(roseOptions)
 </script>
 
@@ -366,7 +260,7 @@ const { domRef: roseChartRef } = useEcharts(roseOptions)
           <Decoration05 class="w-960px h-full pt-20px" />
           <Decoration08 class="w-480px h-full pb-40px" :reverse="true" />
           <p class="absolute text-40px">
-            智慧作业
+            施工养护综合数据
           </p>
         </div>
         <!-- h:150px -->
@@ -381,8 +275,13 @@ const { domRef: roseChartRef } = useEcharts(roseOptions)
         </div>
         <!-- h:825px -->
         <div class="w-full h-825px flex">
-          <div class="h-full w-384px">
-            <ScrollRank unit="万元" :data="(rankData.sort((a, b) => b.value - a.value).map((x, i) => ({ ...x, ranking: i + 1 })) as any)" :slides-per-view="9" />
+          <div class="h-full w-384px flex flex-col px-10px">
+            <div class="text-30px leading-60px h-60px">
+              巡查上报记录数量
+            </div>
+            <div class="h-760px w-full">
+              <ScrollRank unit="" :data="(rankData.sort((a, b) => b.value - a.value).map((x, i) => ({ ...x, ranking: i + 1 })) as any)" :slides-per-view="8" />
+            </div>
           </div>
           <div class="w-full">
             <div class="h-410px flex">
