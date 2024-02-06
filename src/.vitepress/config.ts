@@ -32,6 +32,7 @@ const SideBar: DefaultTheme.SidebarItem[] = [
       { text: '进度池', link: '/components/chart/ProgressPool/' },
       { text: '地图', link: '/components/chart/GeoMap/' },
       { text: '水位图', link: '/components/chart/WaterLevelPond/' },
+      { text: '胶囊柱图', link: '/components/chart/CapsuleChart/' },
     ],
   },
   {

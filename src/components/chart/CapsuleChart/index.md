@@ -1,19 +1,19 @@
 <script setup>
 import { defineClientComponent } from 'vitepress'
-const DemoMap = defineClientComponent(() => {
+const DemoCapsuleChart = defineClientComponent(() => {
   return import('./demo.vue')
 })
 
 </script>
 
-# 地图
+# 胶囊柱图
 
 ## 示例
 
-[示例源码](https://github.com/shy1118999/guodu-data-panel/blob/main/src/components/chart/GeoMap/demo.vue)
+[示例源码](https://github.com/shy1118999/guodu-data-panel/blob/main/src/components/chart/CapsuleChart/demo.vue)
 
 <ClientOnly>
-    <DemoMap />
+    <DemoCapsuleChart />
 </ClientOnly>
 
 :::danger 提示
