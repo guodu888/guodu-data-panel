@@ -134,6 +134,11 @@ const { domRef: boxRef } = useEcharts(options, (chart) => {
     changePieInterval = setInterval(selectPie, activeTimeGap)
   })
 })
+
+onUnmounted(() => {
+  if (changePieInterval)
+    clearInterval(changePieInterval)
+})
 </script>
 
 <template>
