@@ -12,6 +12,7 @@ import { MapChart } from 'echarts/charts'
 import type { EChartsOption } from 'echarts'
 import geoJson from '../../../../maps/330000_full.json'
 import sdGeoJson from '../../../../maps/370000_full.json'
+import hbGeoJson from '../../../../maps/130000_full.json'
 import { useEcharts } from '~/composables/useEcharts'
 
 echarts.use([GeoComponent, VisualMapComponent, MapChart])
@@ -20,6 +21,8 @@ echarts.use([GeoComponent, VisualMapComponent, MapChart])
 echarts.registerMap('ZJ', geoJson)
 // @ts-expect-error map
 echarts.registerMap('SD', sdGeoJson)
+// @ts-expect-error map
+echarts.registerMap('HB', hbGeoJson)
 
 const options = computed<EChartsOption>(() => ({
   // 提示框组件
@@ -130,6 +133,75 @@ const sdOptions = computed<EChartsOption>(() => ({
   ], // 图表数据
 }))
 const { domRef: sdBoxRef } = useEcharts(sdOptions)
+
+const hbOptions = computed(() => ({
+  // 地理坐标系组件
+  geo: {
+    map: 'HB',
+  },
+  // 视觉映射组件（将数据映射到颜色等视觉元素）
+  visualMap: {
+    max: 120, // 最大值
+    min: 10,
+    show: false,
+    inRange: {
+      color: ['lightskyblue', 'yellow', 'orange'], // 图元颜色区间（自动根据数据进行渐变）
+    },
+
+  },
+  tooltip: {
+    trigger: 'item',
+    show: true,
+  },
+  series: [
+    {
+      name: '数据',
+      type: 'map', // 图表类型
+      map: 'HB', // 已注册的地图
+      label: {
+        show: true,
+        emphasis: {
+          textStyle: {
+            color: '#fff',
+          },
+        },
+      },
+
+      emphasis: {
+        itemStyle: {
+          areaColor: 'red',
+          borderColor: 'white',
+        },
+      },
+      data: [
+        { name: '石家庄市', value: 20 },
+        { name: '唐山市', value: 30 },
+        { name: '秦皇岛市', value: 40 },
+        { name: '邯郸市', value: 50 },
+        { name: '邢台市', value: 60 },
+        { name: '保定市', value: 70 },
+        { name: '张家口市', value: 80 },
+        { name: '承德市', value: 90 },
+        { name: '沧州市', value: 100 },
+        { name: '廊坊市', value: 110 },
+        { name: '衡水市', value: 120 },
+      ],
+    },
+  ],
+} as EChartsOption))
+const { domRef: hbBoxRef } = useEcharts(hbOptions, (chart) => {
+  setTimeout(() => {
+    chart.dispatchAction({
+      type: 'highlight',
+      // 高亮保定市
+      name: '保定市',
+    })
+  }, 1000)
+  chart.on('mouseover', (params) => {
+    chart.dispatchAction({ type: 'downplay' })
+    chart.dispatchAction({ type: 'highlight', name: params.name })
+  })
+})
 </script>
 
 <template>
@@ -140,6 +212,9 @@ const { domRef: sdBoxRef } = useEcharts(sdOptions)
     <h2>山东各地市人口</h2>
     <DocDemoBox class="mt-3" :show-copy="false">
       <div ref="sdBoxRef" class="w-full h-600px" />
+    </DocDemoBox>
+    <DocDemoBox class="mt-3" :show-copy="false">
+      <div ref="hbBoxRef" class="w-full h-600px" />
     </DocDemoBox>
   </div>
 </template>

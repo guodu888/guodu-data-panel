@@ -8,6 +8,8 @@ const DemoMap = defineClientComponent(() => {
 
 # 地图
 
+可以从[阿里云DataV数据可视化平台](https://datav.aliyun.com/portal/school/atlas/area_selector)获取`geo json`
+
 ## 示例
 
 [示例源码](https://github.com/shy1118999/guodu-data-panel/blob/main/src/components/chart/GeoMap/demo.vue)
