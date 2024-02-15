@@ -7,7 +7,50 @@
 -->
 <script setup lang="ts">
 import type { EChartsOption } from 'echarts'
+
+import * as echarts from 'echarts/core'
+import { BarChart, GaugeChart, LineChart, PictorialBarChart, PieChart, RadarChart, ScatterChart } from 'echarts/charts'
+import {
+  DataZoomComponent,
+  DatasetComponent,
+  GridComponent,
+  LegendComponent,
+  MarkAreaComponent,
+  MarkLineComponent,
+  PolarComponent,
+  TitleComponent,
+  ToolboxComponent,
+  TooltipComponent,
+  TransformComponent,
+} from 'echarts/components'
+
+import { LabelLayout, UniversalTransition } from 'echarts/features'
+import { CanvasRenderer } from 'echarts/renderers'
 import { useEcharts } from '../../../composables/useEcharts'
+
+echarts.use([
+  TitleComponent,
+  LegendComponent,
+  TooltipComponent,
+  GridComponent,
+  DatasetComponent,
+  TransformComponent,
+  ToolboxComponent,
+  BarChart,
+  LineChart,
+  PieChart,
+  ScatterChart,
+  PictorialBarChart,
+  RadarChart,
+  GaugeChart,
+  LabelLayout,
+  UniversalTransition,
+  CanvasRenderer,
+  PolarComponent,
+  MarkLineComponent,
+  MarkAreaComponent,
+  DataZoomComponent,
+])
 
 const data = [
   {
