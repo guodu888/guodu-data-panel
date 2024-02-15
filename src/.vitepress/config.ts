@@ -33,6 +33,7 @@ const SideBar: DefaultTheme.SidebarItem[] = [
       { text: '地图', link: '/components/chart/GeoMap/' },
       { text: '水位图', link: '/components/chart/WaterLevelPond/' },
       { text: '胶囊柱图', link: '/components/chart/CapsuleChart/' },
+      { text: '动态圆环', link: '/components/chart/ActiveRingChart/' },
     ],
   },
   {
