@@ -25,6 +25,7 @@ const SideBar: DefaultTheme.SidebarItem[] = [
   { text: 'Loading', link: '/components/common/Loading/' },
   { text: 'ScrollTable', link: '/components/scroll/ScrollTable/' },
   { text: 'ScrollRank', link: '/components/scroll/ScrollRank/' },
+  { text: '数值动画', link: '/components/common/NumberAnimation/' },
   {
     text: '常用图表',
     items: [

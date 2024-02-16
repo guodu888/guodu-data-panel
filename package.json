@@ -39,12 +39,14 @@
     "@vueuse/core": "^10.7.2",
     "echarts": "^5.4.3",
     "echarts-wordcloud": "^2.1.0",
+    "lodash-es": "^4.17.21",
     "swiper": "^11.0.5",
     "vue": "^3.4.15"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.6.3",
     "@iconify-json/carbon": "^1.1.28",
+    "@types/lodash-es": "^4.17.12",
     "@types/node": "^20.11.10",
     "@vitejs/plugin-vue": "^5.0.3",
     "@vueuse/components": "^10.7.2",
