@@ -46,8 +46,6 @@ const { width, height } = useElementSize(boxRef)
 <style scoped>
 .border-box-4 {
   position: relative;
-  width: 100%;
-  height: 100%;
 }
 .border-box-4 .reverse {
   transform: rotate(180deg);

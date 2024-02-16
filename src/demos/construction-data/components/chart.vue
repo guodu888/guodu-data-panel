@@ -19,6 +19,7 @@ import {
 
 import { LabelLayout, UniversalTransition } from 'echarts/features'
 import { CanvasRenderer } from 'echarts/renderers'
+import { useRouter } from 'vitepress'
 import { Decoration05, Decoration08, Decoration10, FullScreenContainer, ScrollRank, ScrollTable, WaterLevelPond, useEcharts } from '../../../index'
 import DataPanel from './dataPanel.vue'
 
@@ -275,6 +276,11 @@ const tableColumns = [
   { span: 1, key: 'number', title: '数量' },
   { span: 1, key: 'desc', title: '标段' },
 ]
+
+const router = useRouter()
+function back() {
+  router.go('/demo.html')
+}
 </script>
 
 <template>
@@ -282,9 +288,6 @@ const tableColumns = [
     <UseFullscreen v-slot="{ toggle }">
       <FullScreenContainer :width="1920" :height="1080" background="center no-repeat url(/assets/bg.png)" class="text-white text-24px">
         <!-- h:100px -->
-        <div class="absolute w-50px h-50px z-999999 cursor-pointer right-20px top-20px" @click="() => toggle()">
-          <div class="i-carbon:fit-to-screen w-full" />
-        </div>
         <div class="flex h-100px gap-50px items-center justify-center pt-20px relative">
           <Decoration08 class="w-480px h-full pb-50px" />
           <Decoration05 class="w-960px h-full pt-20px" />
@@ -292,6 +295,12 @@ const tableColumns = [
           <p class="absolute text-40px">
             施工养护综合数据
           </p>
+          <div class="absolute w-50px h-50px z-999999 cursor-pointer right-20px" @click="() => toggle()">
+            <div class="i-carbon:fit-to-screen w-full" />
+          </div>
+          <div class="absolute w-50px h-50px z-999999 cursor-pointer left-20px" @click="back">
+            <div class="i-carbon:arrow-left w-full" />
+          </div>
         </div>
         <!-- h:150px -->
         <div class="flex h-150px justify-center items-center relative gap-10px bg-#061e5d80">
