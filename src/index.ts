@@ -5,8 +5,9 @@ import ScrollRank from './components/scroll/ScrollRank/index.vue'
 import { useEcharts } from './composables/useEcharts'
 import WaterLevelPond from './components/chart/waterLevelPond/index.vue'
 import NumberAnimation from './components/common/NumberAnimation/index.vue'
+import Loading from './components/common/Loading/index.vue'
 
 export * from './components/border'
 export * from './components/decoration'
 
-export { FullScreenContainer, BorderButton, ScrollTable, ScrollRank, useEcharts, WaterLevelPond, NumberAnimation }
+export { FullScreenContainer, BorderButton, ScrollTable, ScrollRank, useEcharts, Loading, WaterLevelPond, NumberAnimation }
