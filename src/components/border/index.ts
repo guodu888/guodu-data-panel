@@ -11,6 +11,7 @@ import BoxBorder10 from './BoxBorder10/index.vue'
 import BoxBorder11 from './BoxBorder11/index.vue'
 import BoxBorder12 from './BoxBorder12/index.vue'
 import BoxBorder13 from './BoxBorder13/index.vue'
+import BoxBorder14 from './BoxBorder14/index.vue'
 
 export {
   BoxBorder01,
@@ -26,4 +27,5 @@ export {
   BoxBorder11,
   BoxBorder12,
   BoxBorder13,
+  BoxBorder14,
 }
