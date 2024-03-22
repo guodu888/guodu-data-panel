@@ -16,6 +16,10 @@ const guide = [
     text: '注意事项',
     link: '/tips',
   },
+  {
+    text: '所有组件',
+    link: '/all-components',
+  },
 ]
 
 const SideBar: DefaultTheme.SidebarItem[] = [
