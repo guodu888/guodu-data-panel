@@ -9,7 +9,7 @@ hero:
       text: 快速开始
       link: /guide
     - theme: brand
-      text: Vue 2.x
+      text: Vue 2.x(DataV)
       link: http://datav.jiaminghi.com/
     - theme: alt
       text: Github
