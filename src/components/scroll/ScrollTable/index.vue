@@ -6,16 +6,11 @@
  * @Description: ScrollTable
 -->
 <script setup lang="ts" generic="T">
-interface Column {
-  key: string
-  title: string
-  span?: number
-  render?: (row: T, index: number) => VNode
-}
+import type { TableColumn } from '../../../types'
 
 const props = withDefaults(defineProps<{
   data: T[]
-  columns: Column[]
+  columns: TableColumn[]
   rowNum?: number
   rowHeight?: number
 }>(), {

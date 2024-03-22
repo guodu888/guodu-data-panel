@@ -9,5 +9,6 @@ import Loading from './components/common/Loading/index.vue'
 
 export * from './components/border'
 export * from './components/decoration'
+export * from './types'
 
 export { FullScreenContainer, BorderButton, ScrollTable, ScrollRank, useEcharts, Loading, WaterLevelPond, NumberAnimation }
