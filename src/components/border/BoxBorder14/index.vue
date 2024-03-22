@@ -11,8 +11,8 @@ import { ref } from 'vue'
 import { useElementSize } from '@vueuse/core'
 
 const props = withDefaults(defineProps<{
-  colors: [string, string]
-  backgroundColor: string
+  colors?: [string, string]
+  backgroundColor?: string
 }>(), {
   colors: () => ['#fff', 'rgba(255, 255, 255, 0.6)'],
   backgroundColor: 'transparent',
