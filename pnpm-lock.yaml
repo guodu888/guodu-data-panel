@@ -71,8 +71,8 @@ devDependencies:
     specifier: ^3.7.3
     version: 3.7.3(@types/node@20.11.30)(typescript@5.4.3)(vite@5.2.2)
   vitepress:
-    specifier: 1.0.0-rc.40
-    version: 1.0.0-rc.40(@algolia/client-search@4.22.1)(@types/node@20.11.30)(postcss@8.4.38)(search-insights@2.13.0)(typescript@5.4.3)
+    specifier: 1.0.1
+    version: 1.0.1(@algolia/client-search@4.22.1)(@types/node@20.11.30)(postcss@8.4.38)(search-insights@2.13.0)(typescript@5.4.3)
   vue-tsc:
     specifier: ^1.8.27
     version: 1.8.27(typescript@5.4.3)
@@ -1312,6 +1312,16 @@ packages:
       string-argv: 0.3.2
     dev: true
 
+  /@shikijs/core@1.2.0:
+    resolution: {integrity: sha512-OlFvx+nyr5C8zpcMBnSGir0YPD6K11uYhouqhNmm1qLiis4GA7SsGtu07r9gKS9omks8RtQqHrJL4S+lqWK01A==}
+    dev: true
+
+  /@shikijs/transformers@1.2.0:
+    resolution: {integrity: sha512-xKn7DtA65DQV4FOfYsrvqM80xOy2xuXnxWWKsZmHv1VII/IOuDUDsWDu3KnpeLH6wqNJWp1GRoNUsHR1aw/VhQ==}
+    dependencies:
+      shiki: 1.2.0
+    dev: true
+
   /@stylistic/eslint-plugin-js@1.7.0(eslint-ts-patch@8.56.0-0):
     resolution: {integrity: sha512-PN6On/+or63FGnhhMKSQfYcWutRlzOiYlVdLM6yN7lquoBTqUJHYnl4TA4MHwiAt46X5gRxDr1+xPZ1lOLcL+Q==}
     engines: {node: ^16.0.0 || >=18.0.0}
@@ -1997,8 +2007,31 @@ packages:
       '@vue/compiler-dom': 3.4.21
       '@vue/shared': 3.4.21
 
-  /@vue/devtools-api@6.6.1:
-    resolution: {integrity: sha512-LgPscpE3Vs0x96PzSSB4IGVSZXZBZHpfxs+ZA1d+VEPwHdOXowy/Y2CsvCAIFrf+ssVU1pD1jidj505EpUnfbA==}
+  /@vue/devtools-api@7.0.20(vue@3.4.21):
+    resolution: {integrity: sha512-DGEIdotTQFll4187YGc/0awcag7UGJu9M6rE1Pxcs8AX/sGm0Ikk7UqQELmqYsyPzTT9s6OZzSPuBc4OatOXKA==}
+    dependencies:
+      '@vue/devtools-kit': 7.0.20(vue@3.4.21)
+    transitivePeerDependencies:
+      - vue
+    dev: true
+
+  /@vue/devtools-kit@7.0.20(vue@3.4.21):
+    resolution: {integrity: sha512-FgFuPuqrhQ51rR/sVi52FnGgrxJ3X1bvNra/SkBzPhxJVhfyL5w2YUJZI1FgCvtLAyPSomJNdvlG415ZbJsr6w==}
+    peerDependencies:
+      vue: ^3.0.0
+    dependencies:
+      '@vue/devtools-shared': 7.0.20
+      hookable: 5.5.3
+      mitt: 3.0.1
+      perfect-debounce: 1.0.0
+      speakingurl: 14.0.1
+      vue: 3.4.21(typescript@5.4.3)
+    dev: true
+
+  /@vue/devtools-shared@7.0.20:
+    resolution: {integrity: sha512-E6CiCaYr6ZWOCYJgWodXcPCXxB12vgbUA1X1sG0F1tK5Bo5I35GJuTR8LBJLFHV0VpwLWvyrIi9drT1ZbuJxlg==}
+    dependencies:
+      rfdc: 1.3.1
     dev: true
 
   /@vue/language-core@1.8.27(typescript@5.4.3):
@@ -3419,6 +3452,10 @@ packages:
     engines: {node: '>=12.0.0'}
     dev: true
 
+  /hookable@5.5.3:
+    resolution: {integrity: sha512-Yc+BQe8SvoXH1643Qez1zqLRmbA5rCL+sSmk6TVos0LWVfNIB7PGncdlId77WzLGSIB5KaWgTaNTs2lNVEI6VQ==}
+    dev: true
+
   /hosted-git-info@2.8.9:
     resolution: {integrity: sha512-mxIDAb9Lsm6DoOJ7xH+5+X4y1LU/4Hi50L9C5sIswK3JzULS4bwk1FvjdBgvYR4bzT4tuUQiC15FE2f5HbLvYw==}
     dev: true
@@ -3839,6 +3876,10 @@ packages:
     dependencies:
       minipass: 3.3.6
       yallist: 4.0.0
+    dev: true
+
+  /mitt@3.0.1:
+    resolution: {integrity: sha512-vKivATfr97l2/QBCYAkXYDbrIWPM2IIKEl7YPhjCvKlG3kE2gm+uBo6nEXK3M5/Ffh/FLpKExzOQ3JJoJGFKBw==}
     dev: true
 
   /mkdirp@1.0.4:
@@ -4290,6 +4331,10 @@ packages:
     engines: {iojs: '>=1.0.0', node: '>=0.10.0'}
     dev: true
 
+  /rfdc@1.3.1:
+    resolution: {integrity: sha512-r5a3l5HzYlIC68TpmYKlxWjmOP6wiPJ1vWv2HeLhNsRZMrCkxeqxiHlQ21oXmQ4F3SiryXBHhAD7JZqvOJjFmg==}
+    dev: true
+
   /rimraf@3.0.2:
     resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==}
     hasBin: true
@@ -4376,20 +4421,10 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /shikiji-core@0.10.2:
-    resolution: {integrity: sha512-9Of8HMlF96usXJHmCL3Gd0Fcf0EcyJUF9m8EoAKKd98mHXi0La2AZl1h6PegSFGtiYcBDK/fLuKbDa1l16r1fA==}
-    dev: true
-
-  /shikiji-transformers@0.10.2:
-    resolution: {integrity: sha512-7IVTwl1af205ywYEq5bOAYOTOFW4V1dVX1EablP0nWKErqZeD1o93VMytxmtJomqS+YwbB8doY8SE3MFMn0aPQ==}
+  /shiki@1.2.0:
+    resolution: {integrity: sha512-xLhiTMOIUXCv5DqJ4I70GgQCtdlzsTqFLZWcMHHG3TAieBUbvEGthdrlPDlX4mL/Wszx9C6rEcxU6kMlg4YlxA==}
     dependencies:
-      shikiji: 0.10.2
-    dev: true
-
-  /shikiji@0.10.2:
-    resolution: {integrity: sha512-wtZg3T0vtYV2PnqusWQs3mDaJBdCPWxFDrBM/SE5LfrX92gjUvfEMlc+vJnoKY6Z/S44OWaCRzNIsdBRWcTAiw==}
-    dependencies:
-      shikiji-core: 0.10.2
+      '@shikijs/core': 1.2.0
     dev: true
 
   /signal-exit@3.0.7:
@@ -4455,6 +4490,11 @@ packages:
 
   /spdx-license-ids@3.0.17:
     resolution: {integrity: sha512-sh8PWc/ftMqAAdFiBu6Fy6JUOYjqDJBJvIhpfDMyHrr0Rbp5liZqd4TjtQ/RgfLjKFZb+LMx5hpml5qOWy0qvg==}
+    dev: true
+
+  /speakingurl@14.0.1:
+    resolution: {integrity: sha512-1POYv7uv2gXoyGFpBCmpDVSNV74IfsWlDW216UPjbWufNf+bSU6GdbDsxdcxtfwb4xlI3yxzOTKClUosxARYrQ==}
+    engines: {node: '>=0.10.0'}
     dev: true
 
   /sprintf-js@1.0.3:
@@ -4915,12 +4955,12 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /vitepress@1.0.0-rc.40(@algolia/client-search@4.22.1)(@types/node@20.11.30)(postcss@8.4.38)(search-insights@2.13.0)(typescript@5.4.3):
-    resolution: {integrity: sha512-1x9PCrcsJwqhpccyTR93uD6jpiPDeRC98CBCAQLLBb44a3VSXYBPzhCahi+2kwAYylu49p0XhseMPVM4IVcWcw==}
+  /vitepress@1.0.1(@algolia/client-search@4.22.1)(@types/node@20.11.30)(postcss@8.4.38)(search-insights@2.13.0)(typescript@5.4.3):
+    resolution: {integrity: sha512-eNr5pOBppYUUjEhv8S0S2t9Tv95LQ6mMeHj6ivaGwfHxpov70Vduuwl/QQMDRznKDSaP0WKV7a82Pb4JVOaqEw==}
     hasBin: true
     peerDependencies:
-      markdown-it-mathjax3: ^4.3.2
-      postcss: ^8.4.33
+      markdown-it-mathjax3: ^4
+      postcss: ^8
     peerDependenciesMeta:
       markdown-it-mathjax3:
         optional: true
@@ -4929,18 +4969,18 @@ packages:
     dependencies:
       '@docsearch/css': 3.6.0
       '@docsearch/js': 3.6.0(@algolia/client-search@4.22.1)(search-insights@2.13.0)
+      '@shikijs/core': 1.2.0
+      '@shikijs/transformers': 1.2.0
       '@types/markdown-it': 13.0.7
       '@vitejs/plugin-vue': 5.0.4(vite@5.2.2)(vue@3.4.21)
-      '@vue/devtools-api': 6.6.1
+      '@vue/devtools-api': 7.0.20(vue@3.4.21)
       '@vueuse/core': 10.9.0(vue@3.4.21)
       '@vueuse/integrations': 10.9.0(focus-trap@7.5.4)(vue@3.4.21)
       focus-trap: 7.5.4
       mark.js: 8.11.1
       minisearch: 6.3.0
       postcss: 8.4.38
-      shikiji: 0.10.2
-      shikiji-core: 0.10.2
-      shikiji-transformers: 0.10.2
+      shiki: 1.2.0
       vite: 5.2.2(@types/node@20.11.30)
       vue: 3.4.21(typescript@5.4.3)
     transitivePeerDependencies:
