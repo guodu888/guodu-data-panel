@@ -26,7 +26,7 @@ const form = ref<{
 })
 
 const source = computed(() => `
-<BoxBorder11 class="w-full h-full" :colors="[${form.value.colors.map(x => `'${x}'`).join(' ,')}]"  background-color="${form.value.backgroundColor}">
+<BoxBorder11 class="w-full h-full" :colors="[${form.value.colors.map(x => `'${x}'`).join(' ,')}]"  background-color="${form.value.backgroundColor}" :animate="${form.value.animate}" title="${form.value.title}" :title-width="${form.value.titleWidth}" :title-size="${form.value.titleSize}">
   <div class="text-white w-full h-full flex justify-center items-center">
     BoxBorder11 Inner
   </div>
