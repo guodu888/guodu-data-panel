@@ -1,7 +1,7 @@
 {
   "name": "guodu-data-panel",
   "type": "module",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "packageManager": "pnpm@8.6.3",
   "description": "guodu data panel",
   "author": "shy1118",
