@@ -14,12 +14,13 @@ const props = withDefaults(defineProps<{
   rowNum?: number
   rowHeight?: number
 }>(), {
-  rowNum: 5,
+  rowNum: 50,
   rowHeight: 40,
 })
 
 // const data = ref([1, 2, 3])
-const initList = [...Array.from({ length: props.rowNum }).fill(true), ...Array.from({ length: props.data.length * 3 - props.rowNum }).fill(false)]
+const rowNum = computed(() => Math.min(props.rowNum, props.data.length))
+const initList = [...Array.from({ length: rowNum.value }).fill(true), ...Array.from({ length: props.data.length * 3 - rowNum.value }).fill(false)]
 const list = ref([...initList])
 const showAnimation = ref(true)
 const gapTime = 1500
@@ -30,7 +31,7 @@ function handleChange() {
   if (list.value[list.value.length - 1]) {
     setTimeout(() => {
       showAnimation.value = false
-      list.value = [...Array.from({ length: props.data.length * 3 }).map((_, index) => !!((index >= props.data.length - props.rowNum && index < props.data.length)))]
+      list.value = [...Array.from({ length: props.data.length * 3 }).map((_, index) => !!((index >= props.data.length - rowNum.value && index < props.data.length)))]
       setTimeout(() => {
         nextTick(() => {
           showAnimation.value = true
