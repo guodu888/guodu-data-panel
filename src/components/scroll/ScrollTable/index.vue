@@ -19,8 +19,8 @@ const props = withDefaults(defineProps<{
 })
 
 // const data = ref([1, 2, 3])
-const rowNum = computed(() => Math.min(props.rowNum, props.data.length))
-const initList = [...Array.from({ length: rowNum.value }).fill(true), ...Array.from({ length: props.data.length * 3 - rowNum.value }).fill(false)]
+let rowNum = Math.min(props.rowNum, props.data.length)
+const initList = [...Array.from({ length: rowNum }).fill(true), ...Array.from({ length: props.data.length * 3 - rowNum }).fill(false)]
 const list = ref([...initList])
 const showAnimation = ref(true)
 const gapTime = 1500
@@ -31,7 +31,7 @@ function handleChange() {
   if (list.value[list.value.length - 1]) {
     setTimeout(() => {
       showAnimation.value = false
-      list.value = [...Array.from({ length: props.data.length * 3 }).map((_, index) => !!((index >= props.data.length - rowNum.value && index < props.data.length)))]
+      list.value = [...Array.from({ length: props.data.length * 3 }).map((_, index) => !!((index >= props.data.length - rowNum && index < props.data.length)))]
       setTimeout(() => {
         nextTick(() => {
           showAnimation.value = true
@@ -50,11 +50,13 @@ onMounted(() => {
   }, gapTime)
 })
 
+let isMouseHovering = false
 function handleStopInterval() {
   if (interval) {
     clearInterval(interval)
     interval = null
   }
+  isMouseHovering = true
 }
 
 function handleStartInterval() {
@@ -63,6 +65,7 @@ function handleStartInterval() {
   interval = setInterval(() => {
     handleChange()
   }, gapTime)
+  isMouseHovering = false
 }
 
 onUnmounted(() => {
@@ -72,6 +75,23 @@ onUnmounted(() => {
 
 const gridTemplateColumns = computed(() => {
   return props.columns.map(column => `${column.span ?? 1}fr`).join(' ')
+})
+
+watch([props.data, props.rowNum], (newData) => {
+  if (interval) {
+    clearInterval(interval)
+    interval = null
+  }
+
+  const d = (newData[0] ?? props.data) as T[]
+  const r = (newData[1] ?? props.rowNum) as number
+  rowNum = Math.min(r, d.length)
+  list.value = [...Array.from({ length: props.data.length * 3 }).map((_, index) => !!((index >= props.data.length - rowNum && index < props.data.length)))]
+  if (!isMouseHovering) {
+    setTimeout(() => {
+      handleStartInterval()
+    }, 300)
+  }
 })
 </script>
 
