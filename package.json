@@ -14,7 +14,7 @@
   "bugs": {
     "url": "https://github.com/shy1118999/guodu-data-panel/issues"
   },
-  "keywords": [],
+  "keywords": ["svg", "bi", "echarts", "datav"],
   "main": "./lib/guodu-data-panel.umd.cjs",
   "module": "./lib/guodu-data-panel.js",
   "types": "./lib/index.d.ts",

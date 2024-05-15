@@ -5,7 +5,7 @@
 ## 🚀 Features
 
 + Many BoxBorder
-+ Mang Decoration
++ Many Decoration
 + ScrollTable & ScrollRank
 + useEcharts
 + ...
