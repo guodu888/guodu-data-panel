@@ -1,7 +1,7 @@
 {
   "name": "guodu-data-panel",
   "type": "module",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "packageManager": "pnpm@8.6.3",
   "description": "guodu data panel",
   "author": "shy1118",
@@ -14,7 +14,12 @@
   "bugs": {
     "url": "https://github.com/shy1118999/guodu-data-panel/issues"
   },
-  "keywords": ["svg", "bi", "echarts", "datav"],
+  "keywords": [
+    "svg",
+    "bi",
+    "echarts",
+    "datav"
+  ],
   "main": "./lib/guodu-data-panel.umd.cjs",
   "module": "./lib/guodu-data-panel.js",
   "types": "./lib/index.d.ts",
