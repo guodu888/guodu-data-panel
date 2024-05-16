@@ -35,7 +35,7 @@ import {
 
 ## [边框01](/components/border/BoxBorder01/)
 
-<DocDemoBox class="h-400px" :copied="false">
+<DocDemoBox class="h-400px" :show-copy="false">
     <BoxBorder01 class="w-full h-full">
     <div class="text-white w-full h-full flex justify-center items-center">
         BoxBorder01 Inner
@@ -45,7 +45,7 @@ import {
 
 ## [边框02](/components/border/BoxBorder02/)
 
-<DocDemoBox class="h-400px" :copied="false">
+<DocDemoBox class="h-400px" :show-copy="false">
     <BoxBorder02 class="w-full h-full">
     <div class="text-white w-full h-full flex justify-center items-center">
         BoxBorder02 Inner
@@ -55,7 +55,7 @@ import {
 
 ## [边框03](/components/border/BoxBorder03/)
 
-<DocDemoBox class="h-400px" :copied="false">
+<DocDemoBox class="h-400px" :show-copy="false">
     <BoxBorder03 class="w-full h-full">
     <div class="text-white w-full h-full flex justify-center items-center">
         BoxBorder03 Inner
@@ -65,7 +65,7 @@ import {
 
 ## [边框04](/components/border/BoxBorder04/)
 
-<DocDemoBox class="h-400px" :copied="false">
+<DocDemoBox class="h-400px" :show-copy="false">
     <BoxBorder04 class="w-full h-full">
     <div class="text-white w-full h-full flex justify-center items-center">
         BoxBorder04 Inner
@@ -75,7 +75,7 @@ import {
 
 ## [边框05](/components/border/BoxBorder05/)
 
-<DocDemoBox class="h-400px" :copied="false">
+<DocDemoBox class="h-400px" :show-copy="false">
     <BoxBorder05 class="w-full h-full">
     <div class="text-white w-full h-full flex justify-center items-center">
         BoxBorder05 Inner
@@ -85,7 +85,7 @@ import {
 
 ## [边框06](/components/border/BoxBorder06/)
 
-<DocDemoBox class="h-400px" :copied="false">
+<DocDemoBox class="h-400px" :show-copy="false">
     <BoxBorder06 class="w-full h-full">
     <div class="text-white w-full h-full flex justify-center items-center">
         BoxBorder06 Inner
@@ -95,7 +95,7 @@ import {
 
 ## [边框07](/components/border/BoxBorder07/)
 
-<DocDemoBox class="h-400px" :copied="false">
+<DocDemoBox class="h-400px" :show-copy="false">
     <BoxBorder07 class="w-full h-full">
     <div class="text-white w-full h-full flex justify-center items-center">
         BoxBorder07 Inner
@@ -105,7 +105,7 @@ import {
 
 ## [边框08](/components/border/BoxBorder08/)
 
-<DocDemoBox class="h-400px" :copied="false">
+<DocDemoBox class="h-400px" :show-copy="false">
     <BoxBorder08 class="w-full h-full">
     <div class="text-white w-full h-full flex justify-center items-center">
         BoxBorder08 Inner
@@ -115,7 +115,7 @@ import {
 
 ## [边框09](/components/border/BoxBorder09/)
 
-<DocDemoBox class="h-400px" :copied="false">
+<DocDemoBox class="h-400px" :show-copy="false">
     <BoxBorder09 class="w-full h-full">
     <div class="text-white w-full h-full flex justify-center items-center">
         BoxBorder09 Inner
@@ -125,7 +125,7 @@ import {
 
 ## [边框10](/components/border/BoxBorder10/)
 
-<DocDemoBox class="h-400px" :copied="false">
+<DocDemoBox class="h-400px" :show-copy="false">
     <BoxBorder10 class="w-full h-full">
     <div class="text-white w-full h-full flex justify-center items-center">
         BoxBorder10 Inner
@@ -135,7 +135,7 @@ import {
 
 ## [边框11](/components/border/BoxBorder11/)
 
-<DocDemoBox class="h-400px" :copied="false">
+<DocDemoBox class="h-400px" :show-copy="false">
     <BoxBorder11 class="w-full h-full">
     <div class="text-white w-full h-full flex justify-center items-center">
         BoxBorder11 Inner
@@ -145,7 +145,7 @@ import {
 
 ## [边框12](/components/border/BoxBorder12/)
 
-<DocDemoBox class="h-400px" :copied="false">
+<DocDemoBox class="h-400px" :show-copy="false">
     <BoxBorder12 class="w-full h-full">
     <div class="text-white w-full h-full flex justify-center items-center">
         BoxBorder12 Inner
@@ -155,7 +155,7 @@ import {
 
 ## [边框13](/components/border/BoxBorder13/)
 
-<DocDemoBox class="h-400px" :copied="false">
+<DocDemoBox class="h-400px" :show-copy="false">
     <BoxBorder13 class="w-full h-full">
     <div class="text-white w-full h-full flex justify-center items-center">
         BoxBorder13 Inner
@@ -165,7 +165,7 @@ import {
 
 ## [边框14](/components/border/BoxBorder14/)
 
-<DocDemoBox class="h-400px" :copied="false">
+<DocDemoBox class="h-400px" :show-copy="false">
     <BoxBorder14 class="w-full h-full">
     <div class="text-white w-full h-full flex justify-center items-center">
         BoxBorder14 Inner
@@ -175,7 +175,7 @@ import {
 
 ## [边框15](/components/border/BoxBorder15/)
 
-<DocDemoBox class="h-400px" :copied="false">
+<DocDemoBox class="h-400px" :show-copy="false">
     <BoxBorder15 class="w-full h-full">
     <div class="text-white w-full h-full flex justify-center items-center">
         BoxBorder15 Inner
@@ -185,43 +185,43 @@ import {
 
 ## [装饰01](/components/decoration/Decoration01/)
 
-<DocDemoBox :copied="false">
+<DocDemoBox :show-copy="false">
     <Decoration01 :style="{ width: '200px', height: `50px` }" class="mx-auto" />
 </DocDemoBox>
 
 ## [装饰02](/components/decoration/Decoration02/)
 
-<DocDemoBox :copied="false">
+<DocDemoBox :show-copy="false">
     <Decoration02 :colors="['#3faacb', '#fff']" :dur="6" :reverse="false" :size="3" class="w-full h-full" />
 </DocDemoBox>
 
 ## [装饰03](/components/decoration/Decoration03/)
 
-<DocDemoBox :copied="false">
+<DocDemoBox :show-copy="false">
     <Decoration03 :size="7" :row="2" :column="25" :colors="['#7acaec' ,'transparent']" class="mx-auto" :style="{ width: '300px', height: '50px' }" />
 </DocDemoBox>
 
 ## [装饰04](/components/decoration/Decoration04/)
 
-<DocDemoBox :copied="false" class="w-full h-100 flex items-center justify-center" >
+<DocDemoBox :show-copy="false" class="w-full h-100 flex items-center justify-center" >
     <Decoration04 :colors="['rgba(255, 255, 255, 0.3)' ,'rgba(255, 255, 255, 0.3)']" :dur="3" :reverse="false" :size="5" class="w-full h-full" />
 </DocDemoBox>
 
 ## [装饰05](/components/decoration/Decoration05/)
 
-<DocDemoBox :copied="false" class="w-full h-20 flex items-center justify-center">
+<DocDemoBox :show-copy="false" class="w-full h-20 flex items-center justify-center">
     <Decoration05 :colors="['#3f96a5' ,'#3f96a5']" :dur="1.2" class="w-full h-full" />
 </DocDemoBox>
 
 ## [装饰06](/components/decoration/Decoration06/)
 
-<DocDemoBox :copied="false">
+<DocDemoBox :show-copy="false">
     <Decoration06 :size="7" :column="40" :colors="['#7acaec' ,'#7acaec']" class="mx-auto" :style="{ width: '300px', height: '50px' }" />
 </DocDemoBox>
 
 ## [装饰07](/components/decoration/Decoration07/)
 
-<DocDemoBox :copied="false">
+<DocDemoBox :show-copy="false">
     <Decoration07 :colors="['#1dc1f5' ,'#1dc1f5']" class="w-full h-full">
         <div class="text-white">
             Decoration
@@ -231,13 +231,13 @@ import {
 
 ## [装饰08](/components/decoration/Decoration08/)
 
-<DocDemoBox :copied="false">
+<DocDemoBox :show-copy="false">
     <Decoration08 :colors="['#3f96a5' ,'#3f96a5']" :reverse="false"  class="mx-auto" :style="{ width: '300px', height: '50px' }" />
 </DocDemoBox>
 
 ## [装饰09](/components/decoration/Decoration09/)
 
-<DocDemoBox :copied="false">
+<DocDemoBox :show-copy="false">
     <Decoration09 :colors="['rgba(3, 166, 224, 0.8)' ,'rgba(3, 166, 224, 0.5)']" :style="{ width: '150px', height: '150px' }" class="mx-auto">
         <div class="color-green font-bold text-xl">
             50%
@@ -247,13 +247,13 @@ import {
 
 ## [装饰10](/components/decoration/Decoration10/)
 
-<DocDemoBox :copied="false">
+<DocDemoBox :show-copy="false">
     <Decoration10  :colors="['#00c2ff' ,'rgba(0, 194, 255, 0.3)']" class="w-full h-5px"  />
 </DocDemoBox>
 
 ## [装饰11](/components/decoration/Decoration11/)
 
-<DocDemoBox :copied="false">
+<DocDemoBox :show-copy="false">
     <Decoration11 :colors="['#1a98fc' ,'#2cf7fe']" class="mx-auto" :style="{ width: '200px', height: '50px' }">
         <div class="text-green">
             Decoration
@@ -263,7 +263,7 @@ import {
 
 ## [装饰12](/components/decoration/Decoration12/)
 
-<DocDemoBox :copied="false">
+<DocDemoBox :show-copy="false">
     <Decoration12 :colors="['#2783ce' ,'#2cf7fe']" :show-split-line="true"  :split-num="6" :halo-dur="2" :scan-dur="3" :ring-num="3" class="mx-auto" :style="{ width: '150px', height: '150px' }" />
 </DocDemoBox>
 
