@@ -10,7 +10,7 @@ export function MarkdownTransform(): Plugin {
       if (!id.match(/\.md\b/))
         return null
       // 获取src以后的路径
-      return code.replace(/\<demo \/\>/, () => {
+      return code.replace(/<demo \/>/, () => {
         const path = GITHUB_BLOB_URL + id.replace(/.*src/, '').replace(/index\.md$/, 'demo.vue')
 
         return `

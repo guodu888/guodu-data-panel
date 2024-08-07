@@ -164,7 +164,7 @@ export function isHex(color: string): boolean {
     return false
   color = color.toLowerCase()
 
-  return /^#([0-9a-fA-f]{3}|[0-9a-fA-f]{6}|[0-9a-fA-f]{8})$/.test(color)
+  return /^#(?:[0-9A-F]{3}|[0-9A-F]{6}|[0-9A-F]{8})$/i.test(color)
 }
 
 /**
@@ -177,7 +177,7 @@ export function isRgb(color: string): boolean {
     return false
   color = color.toLowerCase()
 
-  return /^(rgb\(|RGB\()/.test(color)
+  return /^(?:rgb\(|RGB\()/.test(color)
 }
 
 /**
@@ -190,7 +190,7 @@ export function isRgba(color: string): boolean {
     return false
   color = color.toLowerCase()
 
-  return /^(rgba|RGBA)/.test(color)
+  return /^(?:rgba|RGBA)/.test(color)
 }
 
 /**
@@ -199,7 +199,7 @@ export function isRgba(color: string): boolean {
  * @return {boolean} Test result
  */
 export function isRgbOrRgba(color: string): boolean {
-  return /^(rgb|rgba|RGB|RGBA)/.test(color)
+  return /^(?:rgb|RGB)/.test(color)
 }
 
 /**
