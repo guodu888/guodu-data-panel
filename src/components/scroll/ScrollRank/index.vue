@@ -6,8 +6,8 @@
  * @Description: ScrollRank
 -->
 <script lang="ts" setup>
-import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Autoplay } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/vue'
 import { fade } from '../../../utils/color'
 import 'swiper/css'
 

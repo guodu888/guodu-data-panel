@@ -30,11 +30,10 @@ function useEcharts(options: Ref<EChartsOption> | ComputedRef<EChartsOption>, re
 + 使用前先安装[`echarts`](https://echarts.apache.org/)
 + 使用前先将组件加载好，可以提前统一加载，例如：
 ```ts
-import * as echarts from 'echarts/core'
 import { BarChart, GaugeChart, LineChart, PictorialBarChart, PieChart, RadarChart, ScatterChart } from 'echarts/charts'
 import {
-  DataZoomComponent,
   DatasetComponent,
+  DataZoomComponent,
   GridComponent,
   LegendComponent,
   MarkAreaComponent,
@@ -45,6 +44,7 @@ import {
   TooltipComponent,
   TransformComponent,
 } from 'echarts/components'
+import * as echarts from 'echarts/core'
 
 import { LabelLayout, UniversalTransition } from 'echarts/features'
 import { CanvasRenderer } from 'echarts/renderers'

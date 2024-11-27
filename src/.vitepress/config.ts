@@ -1,10 +1,10 @@
-import path from 'node:path'
 import type { DefaultTheme } from 'vitepress'
-import { defineConfig } from 'vitepress'
+import path from 'node:path'
 import Unocss from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
-import Components from 'unplugin-vue-components/vite'
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
+import Components from 'unplugin-vue-components/vite'
+import { defineConfig } from 'vitepress'
 import { MarkdownTransform } from './plugins/markdownTransform'
 
 const guide = [

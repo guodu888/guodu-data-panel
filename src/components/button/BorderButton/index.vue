@@ -6,8 +6,8 @@
  * @Description: BorderButton01
 -->
 <script setup lang="ts">
-import BaseWave from '../../common/BaseWave/index.vue'
 import { lighten } from '../../../utils/color'
+import BaseWave from '../../common/BaseWave/index.vue'
 
 defineOptions({
   components: {

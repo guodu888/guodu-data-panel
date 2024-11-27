@@ -6,13 +6,12 @@
  * @Description: electronic-file
 -->
 <script setup lang="ts">
-import { UseFullscreen } from '@vueuse/components'
 import type { EChartsOption } from 'echarts'
-import * as echarts from 'echarts/core'
+import { UseFullscreen } from '@vueuse/components'
 import { BarChart, GaugeChart, LineChart, PictorialBarChart, PieChart, RadarChart, ScatterChart } from 'echarts/charts'
 import {
-  DataZoomComponent,
   DatasetComponent,
+  DataZoomComponent,
   GridComponent,
   LegendComponent,
   MarkAreaComponent,
@@ -23,11 +22,12 @@ import {
   TooltipComponent,
   TransformComponent,
 } from 'echarts/components'
+import * as echarts from 'echarts/core'
 
 import { LabelLayout, UniversalTransition } from 'echarts/features'
 import { CanvasRenderer } from 'echarts/renderers'
-import { computed } from 'vue'
 import { useRouter } from 'vitepress'
+import { computed } from 'vue'
 import { BoxBorder01, BoxBorder03, BoxBorder04, Decoration01, Decoration02, FullScreenContainer, useEcharts } from '../../../index'
 import PieRingChart from './PieRingChart.vue'
 

@@ -1,11 +1,11 @@
+import type { UserConfig } from 'vite'
 /// <reference types="vite/client" />
 import path from 'node:path'
 import process from 'node:process'
-import type { UserConfig } from 'vite'
-import { defineConfig, loadEnv } from 'vite'
 import Vue from '@vitejs/plugin-vue'
-import Dts from 'vite-plugin-dts'
 import AutoImport from 'unplugin-auto-import/vite'
+import { defineConfig, loadEnv } from 'vite'
+import Dts from 'vite-plugin-dts'
 
 const libDir = path.resolve(__dirname, 'lib')
 const srcDir = path.resolve(__dirname, 'src')

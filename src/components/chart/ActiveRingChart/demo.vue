@@ -7,11 +7,10 @@
 -->
 <script setup lang="ts">
 import type { EChartsOption } from 'echarts'
-import * as echarts from 'echarts/core'
 import { BarChart, GaugeChart, LineChart, PictorialBarChart, PieChart, RadarChart, ScatterChart } from 'echarts/charts'
 import {
-  DataZoomComponent,
   DatasetComponent,
+  DataZoomComponent,
   GridComponent,
   LegendComponent,
   MarkAreaComponent,
@@ -22,6 +21,7 @@ import {
   TooltipComponent,
   TransformComponent,
 } from 'echarts/components'
+import * as echarts from 'echarts/core'
 
 import { LabelLayout, UniversalTransition } from 'echarts/features'
 import { CanvasRenderer } from 'echarts/renderers'

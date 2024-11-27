@@ -1,6 +1,6 @@
 import type { EChartsOption } from 'echarts'
-import * as echarts from 'echarts/core'
 import type { ComputedRef, Ref } from 'vue'
+import * as echarts from 'echarts/core'
 /**
  * Echarts hooks函数
  * @param options - 图表配置

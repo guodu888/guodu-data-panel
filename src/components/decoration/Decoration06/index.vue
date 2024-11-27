@@ -41,13 +41,16 @@ function calcPointsPosition() {
 
   state.points = points.reduce((all, item) => [...all, ...item], [])
   const heights = state.heights = Array.from({ length: props.column })
-    .fill(0).map(_ => Math.random() > 0.8 ? randomExtend(0.7 * h, h) : randomExtend(0.2 * h, 0.5 * h))
+    .fill(0)
+    .map(_ => Math.random() > 0.8 ? randomExtend(0.7 * h, h) : randomExtend(0.2 * h, 0.5 * h))
 
   state.minHeights = Array.from({ length: props.column })
-    .fill(0).map((_, i) => heights[i] * Math.random())
+    .fill(0)
+    .map((_, i) => heights[i] * Math.random())
 
   state.randoms = Array.from({ length: props.column })
-    .fill(0).map(_ => Math.random() + 1.5)
+    .fill(0)
+    .map(_ => Math.random() + 1.5)
 }
 watch([width, height, () => props.column], () => calcPointsPosition(), { immediate: true })
 </script>

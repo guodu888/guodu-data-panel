@@ -6,8 +6,8 @@
  * @Description: Decoration12
 -->
 <script setup lang="ts">
-import { fade } from '../../../utils/color'
 import { getCircleRadianPoint } from '../../../utils'
+import { fade } from '../../../utils/color'
 
 const props = withDefaults(defineProps<{
   colors?: [string, string]

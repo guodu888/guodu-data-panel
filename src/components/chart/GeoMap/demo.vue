@@ -6,14 +6,14 @@
  * @Description: GeoMap
 -->
 <script setup lang="ts">
-import * as echarts from 'echarts/core'
-import { GeoComponent, VisualMapComponent } from 'echarts/components'
-import { MapChart } from 'echarts/charts'
 import type { EChartsOption } from 'echarts'
+import { MapChart } from 'echarts/charts'
+import { GeoComponent, VisualMapComponent } from 'echarts/components'
+import * as echarts from 'echarts/core'
+import { useEcharts } from '~/composables/useEcharts'
+import hbGeoJson from '../../../../maps/130000_full.json'
 import geoJson from '../../../../maps/330000_full.json'
 import sdGeoJson from '../../../../maps/370000_full.json'
-import hbGeoJson from '../../../../maps/130000_full.json'
-import { useEcharts } from '~/composables/useEcharts'
 
 echarts.use([GeoComponent, VisualMapComponent, MapChart])
 

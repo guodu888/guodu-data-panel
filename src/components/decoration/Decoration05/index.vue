@@ -6,7 +6,7 @@
  * @Description: Decoration05
 -->
 <script setup lang="ts">
-import { type Point, getPolylineLength, pointsToString } from '../../../utils'
+import { getPolylineLength, type Point, pointsToString } from '../../../utils'
 
 const props = withDefaults(defineProps<{
   colors?: [string, string]
