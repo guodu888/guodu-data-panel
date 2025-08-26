@@ -12,7 +12,7 @@ const props = defineProps<{
 </script>
 
 <template>
-  <div class="container">
+  <div class="outer-container">
     <div v-if="props.show" class="loading-container">
       <svg width="50px" height="50px">
         <circle
@@ -48,7 +48,7 @@ const props = defineProps<{
 </template>
 
 <style scoped>
-.container {
+.outer-container {
     position: relative;
     min-height: 50px;
 }
