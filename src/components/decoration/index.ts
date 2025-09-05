@@ -10,6 +10,7 @@ import Decoration09 from './Decoration09/index.vue'
 import Decoration10 from './Decoration10/index.vue'
 import Decoration11 from './Decoration11/index.vue'
 import Decoration12 from './Decoration12/index.vue'
+import Decoration13 from './Decoration13/index.vue'
 
 export {
   Decoration01,
@@ -24,4 +25,5 @@ export {
   Decoration10,
   Decoration11,
   Decoration12,
+  Decoration13,
 }
